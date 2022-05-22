@@ -5,9 +5,6 @@ namespace Mines
 {
     public class Minefield
     {
-        //public static int X = 20;
-        //public static int Y = 20;
-        //public static Cell[,] FieldArray = new Cell[X, Y];
         public static int X;
         public static int Y;
         internal static Cell[,] FieldArray;
@@ -26,22 +23,9 @@ namespace Mines
             }
         }
 
-
-        public static void Field()
-        {
-            for (int x = 0; x < X; x++)
-            {
-                for (int y = 0; y < Y; y++)
-                {
-                    FieldArray[x, y] = new Cell();
-                }
-            }
-
-        }
-
         public static void PrintField()
         {
-            Console.WriteLine("     C# MineSweeper");
+            Console.WriteLine("   C# MineSweeper");
             Console.WriteLine($"Mines: {RandomNumber.countBombs()}");
             Console.WriteLine();
             int charNum =65;
