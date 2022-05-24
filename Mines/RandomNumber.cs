@@ -9,6 +9,7 @@ namespace Mines
         static public void PlaceBombs(int numBombs)
         {
             Random RndNum = new Random();
+            Console.WriteLine("Planting the bombs! please wait...");
 
             while (countBombs()<numBombs)
             {
@@ -27,6 +28,7 @@ namespace Mines
                 Minefield.FieldArray[xValue, yValue].IsBomb = true;
                 Minefield.Surounds(xValue, yValue);
             }
+            Console.Clear();
         }
 
         static public int countBombs()

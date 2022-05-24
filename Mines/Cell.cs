@@ -61,29 +61,7 @@ namespace Mines
                 Userinput.getInput();
             }
             if (Pos[Row, Col].IsBomb == true)
-            {
                 YouLose();
-                //Pos[Row, Col].IsHidden = false;
-                //Console.Clear();
-                //for (int i = 0; i < Minefield.X; i++)
-                //{
-                //    for (int j = 0; j < Minefield.Y; j++)
-                //    {
-                //        if (Minefield.FieldArray[i, j].IsBomb == true)
-                //        {
-                //            Minefield.FieldArray[i, j].IsHidden = false;
-                //        }
-                //    }
-                //}
-                //Minefield.PrintField();
-                //Console.WriteLine();
-                //Console.BackgroundColor = ConsoleColor.Red;
-                //Console.ForegroundColor = ConsoleColor.White;
-                //Console.WriteLine("      BOOOM!!!     ");
-                //Console.WriteLine("     Game Over!    ");
-                //Console.WriteLine("Any Key to continue");
-                //Console.ResetColor();
-            }
             else
             {
                 Minefield.FieldArray[Row, Col].IsHidden = false;
@@ -93,8 +71,6 @@ namespace Mines
                 Minefield.PrintField();
                 Minefield.WinScenario();
                 Userinput.getInput();
-
-
             }
         }
 
