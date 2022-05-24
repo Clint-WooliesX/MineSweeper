@@ -126,12 +126,26 @@ namespace Mines
         }
 
         public static void WinScenario()
-
         {
-            if (NotBombs == 0)
+            int FlaggedBombs = 0;
+            int FlaggedWrong = 0;
+
+            for (int x = 0; x < Minefield.X; x++)
             {
-                Cell.YouWin();
+
+                for (int y = 0; y < Minefield.Y; y++)
+                {
+                    if (Minefield.FieldArray[x, y].IsBomb == true &&
+                        Minefield.FieldArray[x, y].IsFlagged == true)
+                        FlaggedBombs++;
+                    if (Minefield.FieldArray[x, y].IsBomb == false &&
+                       Minefield.FieldArray[x, y].IsFlagged == true)
+                        FlaggedWrong++;
+                }
             }
+            if (FlaggedBombs == Settings.Bombs && FlaggedWrong == 0) Cell.YouWin();
+            if (NotBombs == 0) Cell.YouWin();
+
         }
     }
 }

@@ -104,6 +104,7 @@ namespace Mines
             int Col = Userinput.Coordinates[1];
             Cell[,] Pos = Minefield.FieldArray;
             Pos[Row, Col].IsFlagged = !Pos[Row, Col].IsFlagged;
+            Minefield.WinScenario();
             Console.Clear();
             Minefield.PrintField();
             Userinput.getInput();
