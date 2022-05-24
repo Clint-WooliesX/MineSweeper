@@ -5,12 +5,16 @@ namespace Mines
 {
     public class Minefield
     {
+        public static bool GameOver = false;
+        public static int NotBombs = Settings.Cols * Settings.Rows - Settings.Bombs;
+        //public static int NotBombs = Settings.Cols* Settings.Rows - Settings.Bombs;
         public static int X;
         public static int Y;
         internal static Cell[,] FieldArray;
 
         public Minefield(int x, int y)
         {
+            //NotBombs = Settings.Cols * Settings.Rows - Settings.Bombs;
             X = x;
             Y = y;
             FieldArray = new Cell[X, Y];
@@ -23,12 +27,14 @@ namespace Mines
             }
         }
 
+
+
         public static void PrintField()
         {
             Console.WriteLine("   C# MineSweeper");
-            Console.WriteLine($"Mines: {RandomNumber.countBombs()}");
+            Console.WriteLine($"Mines: {RandomNumber.countBombs()} Not Bombs {Minefield.NotBombs}");
             Console.WriteLine();
-            int charNum =65;
+            int charNum = 65;
             Console.SetCursorPosition(1, 2);
             for (int y = 0; y < Y; y++)
             {
@@ -55,43 +61,77 @@ namespace Mines
             }
         }
 
+        //public static int Neigbours()
+        //{
+        //    Console.WriteLine("  Planting the mines");
+        //    Console.WriteLine("[                    ]");
+        //    Console.SetCursorPosition(1, 1);
+        //    int count = 0;
+        //    for (int x = 0; x < X; x++)
+        //    {
+        //        Console.Write("\u2588");
+        //        for (int y = 0; y < Y; y++)
+        //        {
+        //            int[] xArray = new int[] { x - 1, x - 1, x - 1, x, x, x + 1, x + 1, x + 1 };
+        //            int[] yArray = new int[] { y - 1, y, y + 1, y - 1, y + 1, y - 1, y, y + 1 };
+        //            for (int i = 0; i < 8; i++)
+        //            {
+        //                try
+        //                {
+        //                    //Console.WriteLine($"{xArray[i]},{yArray[i]} checked");
+        //                    if (FieldArray[xArray[i], yArray[i]].IsBomb)
+        //                    {
+        //                        count++;
+        //                    }
+        //                }
+        //                catch
+        //                {
+        //                    //Console.WriteLine("array index out of range");
+        //                }
 
-        public static int Neigbours()
+        //            }
+        //            FieldArray[x, y].NumBombs = count;
+        //            count = 0;
+        //        }
+        //        Console.Write("\u2588");
+        //    }
+        //    Console.Clear();
+        //    return count;
+        //}
+
+        public static void Surounds(int x, int y)
         {
-            Console.WriteLine("  Planting the mines");
-            Console.WriteLine("[                    ]");
-            Console.SetCursorPosition(1, 1);
             int count = 0;
-            for (int x = 0; x < X; x++)
+            int[] xArray = new int[] { x - 1, x - 1, x - 1, x, x, x + 1, x + 1, x + 1 };
+            int[] yArray = new int[] { y - 1, y, y + 1, y - 1, y + 1, y - 1, y, y + 1 };
+            for (int i = 0; i < 8; i++)
             {
-                Console.Write("\u2588");
-                for (int y = 0; y < Y; y++)
-                { 
-                    int[] xArray = new int[] { x - 1, x - 1, x - 1, x    , x    , x + 1, x + 1, x + 1 };
-                    int[] yArray = new int[] { y - 1, y    , y + 1, y - 1, y + 1, y - 1, y    , y + 1 };
-                    for (int i = 0; i < 8; i++)
+                try
+                {
+                    //Console.WriteLine($"{xArray[i]},{yArray[i]} checked");
+                    if (FieldArray[xArray[i], yArray[i]].IsBomb)
                     {
-                        try
-                        {
-                            //Console.WriteLine($"{xArray[i]},{yArray[i]} checked");
-                            if (FieldArray[xArray[i], yArray[i]].IsBomb)
-                            {
-                                count++;
-                            }   
-                        }
-                        catch
-                        {
-                            //Console.WriteLine("array index out of range");
-                        }
-                        
+                        count++;
                     }
-                    FieldArray[x, y].NumBombs = count;
-                    count = 0;
+
+                    //cascade effect
+
                 }
-                Console.Write("\u2588");
+                catch
+                {
+                    //Console.WriteLine("array index out of range");
+                }
             }
-            Console.Clear();
-            return count;
+            FieldArray[x, y].NumBombs = count;
+        }
+
+        public static void WinScenario()
+
+        {
+            if (NotBombs == 0)
+            {
+                Cell.YouWin();
+            }
         }
     }
 }

@@ -6,11 +6,19 @@ namespace Mines
     {
         static void Main(string[] args)
         {
-            Minefield _ = new Minefield(10, 10);
-            RandomNumber.PlaceBombs(10);
-            Minefield.Neigbours();
-            Minefield.PrintField();
-            Userinput.getInput();
+
+
+            {
+                Console.Clear();
+                Settings.ImportSettings();
+                Minefield _ = new Minefield(Settings.Rows, Settings.Cols);
+                RandomNumber.PlaceBombs(Settings.Bombs);
+                Minefield.PrintField();
+                Userinput.getInput();
+            }
+
+
         }
     }
+
 }

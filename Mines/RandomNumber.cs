@@ -31,12 +31,14 @@ namespace Mines
         static public int countBombs()
         {
             int count = 0;
+
             for (int x = 0; x < Minefield.X; x++)
             {
 
                 for (int y = 0; y < Minefield.Y; y++)
                 {
                     if (Minefield.FieldArray[x, y].IsBomb == true) count++;
+                    if (Minefield.FieldArray[x, y].IsFlagged == true) count--;
                 }
             }
             return count;
