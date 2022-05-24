@@ -25,6 +25,7 @@ namespace Mines
                 row.Add(yValue);
 
                 Minefield.FieldArray[xValue, yValue].IsBomb = true;
+                Minefield.Surounds(xValue, yValue);
             }
         }
 

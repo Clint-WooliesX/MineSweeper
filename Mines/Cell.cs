@@ -87,7 +87,7 @@ namespace Mines
             else
             {
                 Minefield.FieldArray[Row, Col].IsHidden = false;
-                Minefield.Surounds(Row, Col);
+                //Minefield.Surounds(Row, Col);
                 Minefield.NotBombs--;
                 Console.Clear();
                 Minefield.PrintField();

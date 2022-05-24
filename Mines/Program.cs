@@ -9,6 +9,8 @@ namespace Mines
 
 
             {
+                Console.Title = "C# MineSweepe - By CLint Kingston";
+                MinConsoleDimensions.MinDimensionsCheck();
                 Console.Clear();
                 Settings.ImportSettings();
                 Minefield _ = new Minefield(Settings.Rows, Settings.Cols);
