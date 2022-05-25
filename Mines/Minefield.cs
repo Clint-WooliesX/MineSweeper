@@ -32,7 +32,7 @@ namespace Mines
         public static void PrintField()
         {
             Console.WriteLine("   C# MineSweeper");
-            Console.WriteLine($"Mines: {RandomNumber.countBombs()}");
+            Console.WriteLine("Mines: Elapsed time: {0:0.0}", Timer.ElapstedTime());
             Console.WriteLine();
             int charNum = 65;
             Console.SetCursorPosition(1, 2);
@@ -48,6 +48,7 @@ namespace Mines
             charNum = 65;
             for (int x = 0; x < X; x++)
             {
+
                 char col = (char)charNum;
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write($"{col}");

@@ -17,6 +17,7 @@ namespace Mines
                 Minefield _ = new Minefield(Settings.Rows, Settings.Cols);
                 RandomNumber.PlaceBombs(Settings.Bombs);
                 Minefield.PrintField();
+                Timer.StartTimer();
                 Userinput.getInput();
             }
 

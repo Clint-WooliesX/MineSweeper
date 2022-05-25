@@ -105,7 +105,7 @@ namespace Mines
             Minefield.PrintField();
             Console.WriteLine();
             Console.BackgroundColor = ConsoleColor.Green;
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("                   ");
             Console.WriteLine("     YOU WIN!!!    ");
             Console.WriteLine("                   ");

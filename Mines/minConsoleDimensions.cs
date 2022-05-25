@@ -43,7 +43,6 @@ namespace Mines
                 if (CheckWidth() > minWidth && CheckHeight() > minHeight)
                     checksOK = true;
                 Userinput.AnyKey();
-                //Userinput.myDelay(500);
             } 
 
         }
