@@ -5,7 +5,7 @@ namespace Mines
     {
         public int NumBombs = 0;
         public bool IsBomb = false;
-        public bool IsHidden = false;
+        public bool IsHidden = true;
         public bool IsFlagged = false;
 
         public Cell()
@@ -24,7 +24,7 @@ namespace Mines
             if (IsHidden == true)
             {
                 Console.ResetColor();
-                return $"\u2588";
+                return $"\u2587";
             }
 
             if (IsBomb == true)
@@ -37,8 +37,8 @@ namespace Mines
             if (NumBombs == 0)
             {
                 Console.ResetColor();
-                //return " ";
-                return $"{NumBombs}";
+                return " ";
+                //return $"{NumBombs}";
             }
 
             Console.ResetColor();
@@ -65,8 +65,11 @@ namespace Mines
             else
             {
                 Minefield.FieldArray[Row, Col].IsHidden = false;
-                //Minefield.Surounds(Row, Col);
                 Minefield.NotBombs--;
+                if (Minefield.FieldArray[Row, Col].NumBombs == 0)
+                {
+                    CascadeZero(Row, Col);
+                }
                 Console.Clear();
                 Minefield.PrintField();
                 Minefield.WinScenario();
@@ -140,6 +143,40 @@ namespace Mines
             Console.WriteLine("Any Key to continue");
             Minefield.GameOver = true;
             Userinput.AnyKey();
+        }
+
+        public static void CascadeZero(int x, int y)
+        {
+            int[][] coordinatArray = new int[][] {
+                new int[] {x - 1,y - 1},
+                new int[] {x - 1,y    },
+                new int[] {x - 1,y + 1},
+                new int[] {    x,y - 1},
+                new int[] {    x,y + 1},
+                new int[] {x + 1,y - 1},
+                new int[] {x + 1,y    },
+                new int[] {x + 1,y + 1},
+            };
+            for (int i = 0; i < 8; i++)
+            {
+                try
+                {
+                    if (Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].NumBombs == 0 &&
+                        Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].IsHidden)
+                    {
+                        Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].IsHidden = false;
+                        Minefield.NotBombs--;
+                        Console.WriteLine($"checking x{coordinatArray[i][0]}y{coordinatArray[i][1]}");
+                        CascadeZero(coordinatArray[i][0], coordinatArray[i][1]);
+                        
+                    }
+                    if (Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].NumBombs > 0 &&
+                       Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].IsHidden) Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].IsHidden = false;
+
+                }
+
+                catch { }
+            }
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Mines
         public static void PrintField()
         {
             Console.WriteLine("   C# MineSweeper");
-            Console.WriteLine($"Mines: {RandomNumber.countBombs()}");
+            Console.WriteLine($"Mines: {RandomNumber.countBombs()} tiles: {Minefield.NotBombs}");
             Console.WriteLine();
             int charNum = 65;
             Console.SetCursorPosition(1, 2);
@@ -91,6 +91,7 @@ namespace Mines
         {
             int FlaggedBombs = 0;
             int FlaggedWrong = 0;
+            int RemainingTiles = 0;
 
             for (int x = 0; x < Minefield.X; x++)
             {
@@ -103,10 +104,13 @@ namespace Mines
                     if (Minefield.FieldArray[x, y].IsBomb == false &&
                        Minefield.FieldArray[x, y].IsFlagged == true)
                         FlaggedWrong++;
+                    if (Minefield.FieldArray[x, y].IsBomb == false &&
+                       Minefield.FieldArray[x, y].IsHidden == true)
+                        RemainingTiles++;
                 }
             }
             if (FlaggedBombs == Settings.Bombs && FlaggedWrong == 0) Cell.YouWin();
-            if (NotBombs == 0) Cell.YouWin();
+            if (RemainingTiles == 0) Cell.YouWin();
 
         }
     }
