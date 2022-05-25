@@ -66,7 +66,10 @@ namespace Mines
             keystroke = Console.ReadKey(true);
         }
 
-
+        public static void myDelay(int delaytime)
+        {
+            System.Threading.Thread.Sleep(delaytime);
+        }
 
     }
 }

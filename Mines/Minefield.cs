@@ -63,11 +63,25 @@ namespace Mines
 
         public static void Surounds(int x, int y)
         {
-            int[] xArray = new int[] { x - 1, x - 1, x - 1, x, x, x + 1, x + 1, x + 1 };
-            int[] yArray = new int[] { y - 1, y, y + 1, y - 1, y + 1, y - 1, y, y + 1 };
+            //int[] xArray = new int[] { x - 1, x - 1, x - 1, x    , x    , x + 1, x + 1, x + 1 };
+            //int[] yArray = new int[] { y - 1, y    , y + 1, y - 1, y + 1, y - 1, y    , y + 1 };
+
+
+            int[][] coordinatArray = new int[][] {
+                new int[] {x - 1,y - 1},
+                new int[] {x - 1,y    },
+                new int[] {x - 1,y + 1},
+                new int[] {    x,y - 1},
+                new int[] {    x,y + 1},
+                new int[] {x + 1,y - 1},
+                new int[] {x + 1,y    },
+                new int[] {x + 1,y + 1},
+            };
+
+
             for (int i = 0; i < 8; i++)
             {
-                try { FieldArray[xArray[i], yArray[i]].NumBombs++; }
+                try { FieldArray[coordinatArray[i][0], coordinatArray[i][1]].NumBombs++; }
 
                 catch { }
             }

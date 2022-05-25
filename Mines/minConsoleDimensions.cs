@@ -5,8 +5,8 @@ namespace Mines
     {
         public static void MinDimensionsCheck()
         {
-            int minWidth = Settings.Cols;
-            int minHeight = Settings.Rows;
+            int minWidth = GetMinCols();
+            int minHeight = Settings.Rows+9;
             bool checksOK = false;
             if (CheckWidth() > minWidth && CheckHeight() > minHeight)
                 checksOK = true;
@@ -14,8 +14,14 @@ namespace Mines
             {
                 Console.Clear();
                 Console.WriteLine($"Console Dimensions:\n" +
-                                  $"    Width: {CheckWidth()}\n" +
-                                  $"    Height: {CheckHeight()}");
+                                  $"     Width:\n" +
+                                  $"    Height:");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.SetCursorPosition(12, 1);
+                Console.Write($"{CheckWidth()}");
+                Console.SetCursorPosition(12, 2);
+                Console.Write($"{CheckHeight()}");
+                Console.ResetColor();
                 if (CheckWidth() <= minWidth) ReturnCheck("width", false);
                 else ReturnCheck("width", true);
                 if (CheckHeight() <= minHeight) ReturnCheck("height", false);
@@ -29,15 +35,15 @@ namespace Mines
                 }
                 if (CheckWidth() <= minWidth || CheckHeight() <= minHeight)
                 {
-                    Console.WriteLine("\nResize the console!\n" +
-                                      "Then press any key to check\n\n" +
-                                      "minimum console ize again");
+                    Console.WriteLine("\nResize the console!\n\n" +
+                                      "Press any key to check\n" +
+                                      "min console size again");
                 }
                 
                 if (CheckWidth() > minWidth && CheckHeight() > minHeight)
                     checksOK = true;
                 Userinput.AnyKey();
-                Console.Title =  "C# MineSweepe - By CLint Kingston";
+                //Userinput.myDelay(500);
             } 
 
         }
@@ -45,11 +51,11 @@ namespace Mines
         public static void ReturnCheck(string dimension, bool isOk)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            if (dimension == "width") Console.SetCursorPosition(15, 1);
-            if (dimension == "height") Console.SetCursorPosition(15, 2);
-            if (isOk == true) Console.Write("- OK");
+            if (dimension == "width") Console.SetCursorPosition(0, 1);
+            if (dimension == "height") Console.SetCursorPosition(0, 2);
+            if (isOk == true) Console.Write(" OK");
             Console.ForegroundColor = ConsoleColor.Red;
-            if (isOk == false) Console.Write("- Too Small");
+            if (isOk == false) Console.Write(" X");
 
         }
 
@@ -61,6 +67,12 @@ namespace Mines
         public static int CheckHeight()
         {
             return Console.BufferHeight;
+        }
+
+        public static int GetMinCols()
+        {
+            if ((Settings.Cols * 2 + 2) < 15) return 15;
+            return Settings.Cols * 2 + 2;
         }
     }
 }

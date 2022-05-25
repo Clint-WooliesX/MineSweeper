@@ -5,7 +5,7 @@ namespace Mines
     {
         public int NumBombs = 0;
         public bool IsBomb = false;
-        public bool IsHidden = true;
+        public bool IsHidden = false;
         public bool IsFlagged = false;
 
         public Cell()
