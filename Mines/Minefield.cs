@@ -25,6 +25,7 @@ namespace Mines
                     FieldArray[i, j] = new Cell();
                 }
             }
+            Timer.StartTimer();
         }
 
 
@@ -32,7 +33,9 @@ namespace Mines
         public static void PrintField()
         {
             Console.WriteLine("   C# MineSweeper");
-            Console.WriteLine("Mines: Elapsed time: {0:0.0}", Timer.ElapstedTime());
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine($"Mines: {RandomNumber.countBombs()}   Time:{Timer.ElapstedTime()}s");
+            Console.ResetColor();
             Console.WriteLine();
             int charNum = 65;
             Console.SetCursorPosition(1, 2);

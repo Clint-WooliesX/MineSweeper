@@ -110,6 +110,7 @@ namespace Mines
             Console.WriteLine("     YOU WIN!!!    ");
             Console.WriteLine("                   ");
             Console.ResetColor();
+            Console.WriteLine($"Elapsed time: {Timer.ElapstedTime()} Seconds");
             Console.WriteLine("Any Key to continue");
             Console.ResetColor();
             Minefield.GameOver = true;
@@ -140,6 +141,7 @@ namespace Mines
             Console.WriteLine("      BOOOM!!!     ");
             Console.WriteLine("     Game Over!    ");
             Console.ResetColor();
+            Console.WriteLine($"Elapsed time: {Timer.ElapstedTime()} Seconds");
             Console.WriteLine("Any Key to continue");
             Minefield.GameOver = true;
             Userinput.AnyKey();
