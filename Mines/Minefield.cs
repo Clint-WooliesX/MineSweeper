@@ -32,7 +32,7 @@ namespace Mines
         public static void PrintField()
         {
             Console.WriteLine("   C# MineSweeper");
-            Console.WriteLine($"Mines: {RandomNumber.countBombs()} tiles: {Minefield.NotBombs}");
+            Console.WriteLine($"Mines: {RandomNumber.countBombs()}");
             Console.WriteLine();
             int charNum = 65;
             Console.SetCursorPosition(1, 2);

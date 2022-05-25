@@ -10,7 +10,7 @@ namespace Mines
 
             {
                 Settings.ImportSettings();
-                Console.Title = "C# MineSweepe - By CLint Kingston";
+                Console.Title = "C# MineSweepe - By Clint Kingston";
                 MinConsoleDimensions.MinDimensionsCheck();
                 Console.Clear();
                 Settings.ImportSettings();
