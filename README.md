@@ -1,4 +1,5 @@
 # C# MineSweeper Project
+![Title](https://github.com/Clint-WooliesX/MineSweeper/raw/master/images/MineSweeper.png "Title")
 ## Design Brief:
 Recreate the Classic game Minesweeper using in a C# Console App, meeting the MVP criteria.
 
@@ -37,6 +38,7 @@ Comment out the escaped extended ASCii characters and uncomment the standadrad c
 The game will run a sintended but the grid cells and bomb charcters may appear as "?" instead on thw windows10 OS as the console does not support the extended ASCII character set.
 
 Linux and OSX Zsh terminals supprt these characters by default.
+
 
 
 
