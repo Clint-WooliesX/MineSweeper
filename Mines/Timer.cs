@@ -13,7 +13,7 @@ namespace Mines
             public static double ElapstedTime()
             {
                 double elapsedTime = DateTime.Now.Subtract(startTime).TotalSeconds;
-                return Math.Round(elapsedTime, 2);
+                return Math.Round(elapsedTime, 1);
             }
         }
     }

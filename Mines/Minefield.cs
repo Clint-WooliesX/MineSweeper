@@ -34,7 +34,13 @@ namespace Mines
         {
             Console.WriteLine("   C# MineSweeper");
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine($"Mines: {RandomNumber.countBombs()}   Time:{Timer.ElapstedTime()}s");
+            Console.WriteLine($"Mines: {RandomNumber.countBombs()}");
+            Console.SetCursorPosition(7,1);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"{RandomNumber.countBombs()}");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.SetCursorPosition(12, 1);
+            Console.WriteLine($"Time:");
             Console.ResetColor();
             Console.WriteLine();
             int charNum = 65;

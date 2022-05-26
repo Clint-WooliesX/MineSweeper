@@ -168,7 +168,7 @@ namespace Mines
                     {
                         Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].IsHidden = false;
                         Minefield.NotBombs--;
-                        Console.WriteLine($"checking x{coordinatArray[i][0]}y{coordinatArray[i][1]}");
+                        //Console.WriteLine($"checking x{coordinatArray[i][0]}y{coordinatArray[i][1]}");
                         CascadeZero(coordinatArray[i][0], coordinatArray[i][1]);
                         
                     }

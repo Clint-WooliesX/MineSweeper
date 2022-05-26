@@ -17,15 +17,18 @@ namespace Mines
             Console.WriteLine("    Row:   Col:");
             Console.SetCursorPosition(8, Minefield.X + 4);
 
-            while(!Minefield.GameOver)
+             while(!Minefield.GameOver)
             {
+                WriteTime();
                 keystroke = Console.ReadKey(true);
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 if ((int)keystroke.Key >= 65 && (int)keystroke.Key <= 65 + Minefield.X - 1)
                 {
+                    if(Coordinates.Count == 0)
+                        Console.SetCursorPosition(8, Minefield.X + 4);
+                    else Console.SetCursorPosition(15, Minefield.X + 4);
                     Console.WriteLine($"{keystroke.Key}");
                     Coordinates.Add((int)keystroke.Key - 65);
-                    Console.SetCursorPosition(15, Minefield.X + 4);
                 }
 
                 if (Coordinates.Count == 2 && keystroke.Key != ConsoleKey.Escape)
@@ -37,7 +40,7 @@ namespace Mines
                     Console.WriteLine("     Esc = Back");
                     Console.ResetColor();
 
-
+                    WriteTime();
                     keystroke = Console.ReadKey(true);
                     if (keystroke.Key == ConsoleKey.Enter)
                     {
@@ -55,7 +58,7 @@ namespace Mines
                         Minefield.PrintField();
                         getInput();
                     }
-
+                    
                 }
             }
         }
@@ -71,5 +74,15 @@ namespace Mines
             System.Threading.Thread.Sleep(delaytime);
         }
 
+        public static void WriteTime()
+        {
+            while (!Console.KeyAvailable)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.SetCursorPosition(17, 1);
+                Console.Write($"{Timer.ElapstedTime()}s");
+                System.Threading.Thread.Sleep(100);
+            }
+        }
     }
 }
