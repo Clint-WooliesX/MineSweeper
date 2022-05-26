@@ -5,7 +5,6 @@ namespace Mines
     public class Minefield
     {
         public static bool GameOver = false;
-        //public static int NotBombs = Settings.Cols * Settings.Rows - Settings.Bombs;
         public static int X;
         public static int Y;
         internal static Cell[,] FieldArray;
