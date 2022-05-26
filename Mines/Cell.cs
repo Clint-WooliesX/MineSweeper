@@ -65,7 +65,6 @@ namespace Mines
             else
             {
                 Minefield.FieldArray[Row, Col].IsHidden = false;
-                Minefield.NotBombs--;
                 if (Minefield.FieldArray[Row, Col].NumBombs == 0)
                     CascadeZero(Row, Col);
                 Console.Clear();
@@ -161,7 +160,6 @@ namespace Mines
                         Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].IsHidden)
                     {
                         Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].IsHidden = false;
-                        Minefield.NotBombs--;
                         CascadeZero(coordinatArray[i][0], coordinatArray[i][1]);
                     }
                     if (Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].NumBombs > 0 &&
