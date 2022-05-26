@@ -22,8 +22,6 @@ namespace Mines
             Cols = cols;
             Rows = rows;
             Bombs = bombs;
-
-
         }
     }
 }

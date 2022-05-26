@@ -4,8 +4,6 @@ namespace Mines
 {
     public class RandomNumber
     {
-
-
         static public void PlaceBombs(int numBombs)
         {
             Random RndNum = new Random();
@@ -34,10 +32,8 @@ namespace Mines
         static public int countBombs()
         {
             int count = 0;
-
             for (int x = 0; x < Minefield.X; x++)
             {
-
                 for (int y = 0; y < Minefield.Y; y++)
                 {
                     if (Minefield.FieldArray[x, y].IsBomb == true) count++;
@@ -46,7 +42,5 @@ namespace Mines
             }
             return count;
         }
-
-
     }
 }

@@ -24,26 +24,26 @@ namespace Mines
             if (IsHidden == true)
             {
                 Console.ResetColor();
-                return $"\u2587";
+                return $"\u2587";   // extended ASCII Table console character
+                //return $"#";       //Windows consolecharacter
             }
 
             if (IsBomb == true)
             {
                 Console.ResetColor();
                 Console.ForegroundColor = ConsoleColor.Red;
-                return $"\u2055";
+                return $"\u2055";   // extended ASCII Table console character
+                //return $"*";       //Windows consolecharacter
             }
 
             if (NumBombs == 0)
             {
                 Console.ResetColor();
                 return " ";
-                //return $"{NumBombs}";
             }
 
             Console.ResetColor();
             return $"{NumBombs}";
-
         }
 
 
@@ -67,9 +67,7 @@ namespace Mines
                 Minefield.FieldArray[Row, Col].IsHidden = false;
                 Minefield.NotBombs--;
                 if (Minefield.FieldArray[Row, Col].NumBombs == 0)
-                {
                     CascadeZero(Row, Col);
-                }
                 Console.Clear();
                 Minefield.PrintField();
                 Minefield.WinScenario();
@@ -127,12 +125,8 @@ namespace Mines
             for (int i = 0; i < Minefield.X; i++)
             {
                 for (int j = 0; j < Minefield.Y; j++)
-                {
                     if (Minefield.FieldArray[i, j].IsBomb == true)
-                    {
                         Minefield.FieldArray[i, j].IsHidden = false;
-                    }
-                }
             }
             Minefield.PrintField();
             Console.WriteLine();
@@ -168,15 +162,12 @@ namespace Mines
                     {
                         Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].IsHidden = false;
                         Minefield.NotBombs--;
-                        //Console.WriteLine($"checking x{coordinatArray[i][0]}y{coordinatArray[i][1]}");
                         CascadeZero(coordinatArray[i][0], coordinatArray[i][1]);
-                        
                     }
                     if (Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].NumBombs > 0 &&
-                       Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].IsHidden) Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].IsHidden = false;
-
+                       Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].IsHidden)
+                        Minefield.FieldArray[coordinatArray[i][0], coordinatArray[i][1]].IsHidden = false;
                 }
-
                 catch { }
             }
         }

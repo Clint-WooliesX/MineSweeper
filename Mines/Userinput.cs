@@ -10,7 +10,6 @@ namespace Mines
         public static void getInput()
         {
             Coordinates.Clear();
-            //if (Minefield.GameWon) return;
             Console.SetCursorPosition(0, 0);
             Console.SetCursorPosition(0, Minefield.X + 4);
             ConsoleKeyInfo keystroke;
@@ -45,20 +44,17 @@ namespace Mines
                     if (keystroke.Key == ConsoleKey.Enter)
                     {
                         Cell.Reveal();
-
                     }
                     if (keystroke.Key == ConsoleKey.Spacebar)
                     {
                         Cell.Flag();
-
                     }
                     if (keystroke.Key == ConsoleKey.Escape)
                     {
                         Console.Clear();
                         Minefield.PrintField();
                         getInput();
-                    }
-                    
+                    }                   
                 }
             }
         }

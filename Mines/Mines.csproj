@@ -9,6 +9,7 @@
     <None Remove="Microsoft.Extensions.Configuration" />
     <None Remove="Microsoft.Extensions.Configuration.Binder" />
     <None Remove="Microsoft.Extensions.Configuration.Json" />
+    <None Remove="Newtonsoft.Json" />
   </ItemGroup>
   <ItemGroup>
     <None Update="appsettings.json">

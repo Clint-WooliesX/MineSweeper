@@ -6,8 +6,6 @@ namespace Mines
     {
         static void Main(string[] args)
         {
-
-
             {
                 Settings.ImportSettings();
                 Console.Title = "C# MineSweepe - By Clint Kingston";
@@ -19,9 +17,6 @@ namespace Mines
                 Minefield.PrintField();
                 Userinput.getInput();
             }
-
-
         }
     }
-
 }
