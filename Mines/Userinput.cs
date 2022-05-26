@@ -41,7 +41,8 @@ namespace Mines
 
                     WriteTime();
                     keystroke = Console.ReadKey(true);
-                    if (keystroke.Key == ConsoleKey.Enter)
+                    if (keystroke.Key == ConsoleKey.Enter &&
+                        !Minefield.FieldArray[Coordinates[0], Coordinates[1]].IsFlagged)
                     {
                         Cell.Reveal();
                     }
