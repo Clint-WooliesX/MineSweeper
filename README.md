@@ -1,11 +1,15 @@
 # C# MineSweeper Project
-##Design Brief:
+## Design Brief:
 Recreate the Classic game Minesweeper using in a C# Console App, meeting the MVP criteria.
 
-##Features beyond the scope of the MVP:
+## Features beyond the scope of the MVP:
 * Game is rendered to the console using a text basedgraphical interface
 * Grid size  and number of mines can be configured within "appsettings.json"
 * discovering  an empty cell will cascade reveal all neighbouring empty cells
+* ***Abilty to flag cells as potentially being bombs***
+* ***2 Win Scenarios***
+  * Uncover all the tiles around the bombs or;
+  * Correctly flag all the Mines
 * ***Timer to keep score***
 * ***App perfoms a startupchecks to ensure console buffersize is large enough to display game***
 
