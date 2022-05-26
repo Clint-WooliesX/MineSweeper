@@ -55,7 +55,13 @@ namespace Mines
                         Console.Clear();
                         Minefield.PrintField();
                         getInput();
-                    }                   
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Minefield.PrintField();
+                        getInput();
+                    }
                 }
             }
         }

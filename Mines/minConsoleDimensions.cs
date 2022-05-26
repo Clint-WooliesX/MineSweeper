@@ -5,8 +5,10 @@ namespace Mines
     {
         public static void MinDimensionsCheck()
         {
-            int minWidth = GetMinCols();
-            int minHeight = Settings.Rows+9;
+            //int minWidth = GetMinCols();      //calculated by grid size
+            //int minHeight = Settings.Rows+9;
+            int minWidth = 79;
+            int minHeight = 39;
             bool checksOK = false;
             if (CheckWidth() > minWidth && CheckHeight() > minHeight)
                 checksOK = true;
