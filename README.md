@@ -1,5 +1,8 @@
 # C# MineSweeper Project
 ![Title](https://github.com/Clint-WooliesX/MineSweeper/raw/master/images/MineSweeper.png "Title")
+
+[OSX_Minesweeper_V1.0 release](https://github.com/Clint-WooliesX/MineSweeper/releases/tag/OSX)
+
 ## Design Brief:
 Recreate the Classic game Minesweeper using in a C# Console App, meeting the MVP criteria.
 
