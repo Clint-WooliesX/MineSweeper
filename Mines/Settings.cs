@@ -25,6 +25,12 @@ namespace Mines
             Cols = cols;
             Rows = rows;
             Bombs = bombs;
+
+            if (Cols < 3) Cols = 3;
+            if (Rows < 3) Rows = 3;
+            if (Bombs < 1) Bombs = 1;
+            double minBombs = (Rows * Cols) / 2;
+            if (bombs >= Rows * Cols) Bombs = (int)Math.Floor(minBombs);
         }
     }
 }
