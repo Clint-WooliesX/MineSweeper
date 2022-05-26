@@ -23,9 +23,6 @@ namespace Mines
             Console.WriteLine($"{Settings.Cols}", Color.Green);
             Console.SetCursorPosition(65, 10);
             Console.WriteLine($"{Settings.Bombs}", Color.Green);
-            //Console.SetCursorPosition(20, 11);
-            Console.WriteLine();
-            Console.WriteLine("                         Ctrl + C to quit at any time");
             Console.WriteLine();
             Console.WriteLine("                        Press any key to start game...", Color.Blue);
         }
