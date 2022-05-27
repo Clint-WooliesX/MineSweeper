@@ -1,5 +1,6 @@
 # C# MineSweeper Project
 ![Title](https://github.com/Clint-WooliesX/MineSweeper/raw/master/images/MineSweeper.png "Credits")
+
 ![Title](https://github.com/Clint-WooliesX/MineSweeper/raw/master/images/Win.png "Win")
 ![Title](https://github.com/Clint-WooliesX/MineSweeper/raw/master/images/Lose.png "Lose")
 
