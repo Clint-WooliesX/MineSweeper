@@ -65,22 +65,39 @@ namespace Mines
             }
         }
 
-        public static void Surounds(int x, int y)
+        public static void Neigbours()
         {
-            int[][] coordinatArray = new int[][] {
-                new int[] {x - 1,y - 1},
-                new int[] {x - 1,y    },
-                new int[] {x - 1,y + 1},
-                new int[] {    x,y - 1},
-                new int[] {    x,y + 1},
-                new int[] {x + 1,y - 1},
-                new int[] {x + 1,y    },
-                new int[] {x + 1,y + 1},
-            };
-            for (int i = 0; i < 8; i++)
+
+            int count = 0;
+            for (int x = 0; x < X; x++)
             {
-                try { FieldArray[coordinatArray[i][0], coordinatArray[i][1]].NumBombs++; }
-                catch { }
+                for (int y = 0; y < Y; y++)
+                {
+                    int[][] coordinatArray = new int[][]
+                    {
+                         new int[] {x - 1,y - 1},
+                         new int[] {x - 1,y    },
+                         new int[] {x - 1,y + 1},
+                         new int[] {    x,y - 1},
+                         new int[] {    x,y + 1},
+                         new int[] {x + 1,y - 1},
+                         new int[] {x + 1,y    },
+                          new int[] {x + 1,y + 1},
+                    };
+                    for (int i = 0; i < 8; i++)
+                    {
+                        try
+                        {
+                            if (FieldArray[coordinatArray[i][0], coordinatArray[i][1]].IsBomb)count++;
+                        }
+                        catch
+                        {
+                        }
+
+                    }
+                    FieldArray[x, y].NumBombs = count;
+                    count = 0;
+                }
             }
         }
 

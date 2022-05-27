@@ -18,6 +18,7 @@ namespace Mines
                     Settings.ImportSettings();
                     Minefield _ = new Minefield(Settings.Rows, Settings.Cols);
                     RandomNumber.PlaceBombs(Settings.Bombs);
+                    Minefield.Neigbours();
                     Minefield.PrintField();
                     Userinput.getInput();
                     Minefield.GameOver = false;
