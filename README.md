@@ -10,7 +10,7 @@ See release notes for differences in win64 releases
 [Win64_Minesweeper_V1.0 Standard ASCII release](https://github.com/Clint-WooliesX/MineSweeper/releases/tag/Win64)
 
 ## Design Brief:
-Recreate the Classic game Minesweeper using in a C# Console App, meeting the MVP criteria.
+Recreate the Classic game Minesweeper in a C# Console App, meeting the MVP criteria.
 
 ## Features beyond the scope of the MVP:
 * Game is rendered to the console using a text based graphical interface
@@ -21,7 +21,7 @@ Recreate the Classic game Minesweeper using in a C# Console App, meeting the MVP
   * Uncover all the tiles around the bombs or;
   * Correctly flag all the Mines
 * ***Timer to keep score***
-* ***App perfoms a startupchecks to ensure console buffersize is large enough to display game***
+* ***App perfoms a startup checks to ensure console buffersize is large enough to display game***
 
 ### if i had more time:
 I would have liked to explore the json read and write libraries to implemtent persistent difficulty settings and high scores table.
@@ -47,6 +47,9 @@ Comment out the escaped extended ASCii characters and uncomment the standadrad c
 The game will run as intended but the grid cells and bomb charcters may appear as "?" instead in the windows10 OS as the console does not support the extended ASCII character set by default.
 
 Linux and OSX Zsh terminals supprt these characters by default.
+
+#### lots of testing still required
+Find a bug let me know so I can fix it!
 
 
 
