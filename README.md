@@ -4,7 +4,7 @@
 ![Title](https://github.com/Clint-WooliesX/MineSweeper/raw/master/images/Win.png "Win")
 ![Title](https://github.com/Clint-WooliesX/MineSweeper/raw/master/images/Lose.png "Lose")
 
-[OSX_Minesweeper_V1.0 release](https://github.com/Clint-WooliesX/MineSweeper/releases/tag/OSX)
+[OSX_Minesweeper_v1.1 release](https://github.com/Clint-WooliesX/MineSweeper/releases/tag/OSX)
 
 See release notes for differences in win64 releases
 
