@@ -1,5 +1,7 @@
 # C# MineSweeper Project
-![Title](https://github.com/Clint-WooliesX/MineSweeper/raw/master/images/MineSweeper.png "Title")
+![Title](https://github.com/Clint-WooliesX/MineSweeper/raw/master/images/MineSweeper.png "Credits")
+![Title](https://github.com/Clint-WooliesX/MineSweeper/raw/master/images/Win.png "Win")
+![Title](https://github.com/Clint-WooliesX/MineSweeper/raw/master/images/Lose.png "Lose")
 
 [OSX_Minesweeper_V1.0 release](https://github.com/Clint-WooliesX/MineSweeper/releases/tag/OSX)
 
