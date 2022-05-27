@@ -57,7 +57,10 @@ namespace Mines
                 Console.ResetColor();
                 charNum++;
                 for (int y = 0; y < Y; y++)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write($"{FieldArray[x, y]} ");
+                }
                 Console.WriteLine();
             }
         }

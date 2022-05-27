@@ -10,11 +10,11 @@ namespace Mines
         public static void Credit()
         {
             Console.WriteAscii(" MineSweeper",Color.Yellow);
-            Console.WriteLine("                                 Version 1.0");
-            Console.WriteLine("                       Developed by Clint Kingston 2022");
+            Console.WriteLine("                                 Version 1.0",Color.Yellow);
+            Console.WriteLine("                       Developed by Clint Kingston 2022", Color.White);
             Console.WriteLine();
-            Console.WriteLine("           Game settings can be changed in the appsettings.Json file");
-            Console.WriteLine("            dificulty:          Rows:        Cols:        Mines:     ");
+            Console.WriteLine("           Game settings can be changed in the appsettings.Json file", Color.White);
+            Console.WriteLine("            dificulty:          Rows:        Cols:        Mines:     ", Color.White);
             Console.SetCursorPosition(23,10);
             Console.WriteLine($"{Settings.Diff}", Color.Green);
             Console.SetCursorPosition(38,10);
