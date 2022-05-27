@@ -4,6 +4,7 @@
 [OSX_Minesweeper_V1.0 release](https://github.com/Clint-WooliesX/MineSweeper/releases/tag/OSX)
 
 See release notes for differences in win64 releases
+
 [Win64_Minesweeper_V1.0 Extended ASCII release](https://github.com/Clint-WooliesX/MineSweeper/releases/tag/Win64extascii)
 [Win64_Minesweeper_V1.0 Standard ASCII release](https://github.com/Clint-WooliesX/MineSweeper/releases/tag/Win64)
 
