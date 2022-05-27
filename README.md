@@ -24,7 +24,7 @@ Recreate the Classic game Minesweeper using in a C# Console App, meeting the MVP
 * ***App perfoms a startupchecks to ensure console buffersize is large enough to display game***
 
 ### if i had more time:
-I would have liked to explore the json read and write libraries to implemtent persistent difficulty settings chosen from a game start and high scores table.
+I would have liked to explore the json read and write libraries to implemtent persistent difficulty settings and high scores table.
 
 ### Known issues:
 #### Perfomance under Visual studio
@@ -35,16 +35,16 @@ If built and run from Visual Studio use Project > Release mode.
 Running the game in debug mode will suffer perfomance issues, and may appear to have freezed for up to 30seconds during some instruction sets.
 
 #### Extended ASCII table support
-Text GUI uses extended ASCII characters that may not be suported on in the Windows 10 Console.
+Text GUI uses extended ASCII characters that may not be suported in the Windows 10 Console.
 
 Alternate charcters have been provided in the Cell.cs Cell Class.
 Lines 27 and 28
 and;
 Lines 35 and 36
 
-Comment out the escaped extended ASCii characters and uncomment the standadrad charcters.
+Comment out the escaped extended ASCii characters and uncomment the standadrad charcters. The two Win64 compiled releases have thisdone for you.
 
-The game will run a sintended but the grid cells and bomb charcters may appear as "?" instead on thw windows10 OS as the console does not support the extended ASCII character set.
+The game will run as intended but the grid cells and bomb charcters may appear as "?" instead in the windows10 OS as the console does not support the extended ASCII character set by default.
 
 Linux and OSX Zsh terminals supprt these characters by default.
 
