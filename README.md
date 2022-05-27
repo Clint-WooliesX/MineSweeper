@@ -7,7 +7,7 @@
 Recreate the Classic game Minesweeper using in a C# Console App, meeting the MVP criteria.
 
 ## Features beyond the scope of the MVP:
-* Game is rendered to the console using a text basedgraphical interface
+* Game is rendered to the console using a text based graphical interface
 * Grid size  and number of mines can be configured within "appsettings.json"
 * discovering  an empty cell will cascade reveal all neighbouring empty cells
 * ***Abilty to flag cells as potentially being bombs***
