@@ -8,8 +8,7 @@
 
 See release notes for differences in win64 releases
 
-***Win64 releases taken down temporarily due to detected bug see notes on compiling executable*** 
-Compiled releases will be back once i have access to my windows machine to compile shortly.
+[Win64_StdAscii_Minesweeper_v1.1 release](https://github.com/Clint-WooliesX/MineSweeper/releases/tag/Win64)
 
 ## Design Brief:
 Recreate the Classic game Minesweeper in a C# Console App, meeting the MVP criteria.
